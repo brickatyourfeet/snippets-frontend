@@ -3,14 +3,16 @@
 window.Snippet = {
     index(){
         return axios.get('https://blooming-tundra-73705.herokuapp.com/snippets')
-            .then(result=> result.request.response);
+            .then(result=> result.request.response)
     },
     find(id){
         //return axios.get(`${baseURL}/${id}`)
     },
-    create(){
-        return axios.post('https://blooming-tundra-73705.herokuapp.com/snippets')
-        
+    create(body){
+        return axios.post('https://blooming-tundra-73705.herokuapp.com/snippets', body)
+        .then(result=>{
+           console.log(result) 
+        })
     },
     destroy(id){
         //return axios.delete(`${baseURL}/${id}`)

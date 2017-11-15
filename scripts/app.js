@@ -31,18 +31,18 @@ var postForm =`<form>
 
     <div class="md-form">
         <i class="fa fa-tag prefix grey-text"></i>
-        <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
-        <label for="form8">Description:</label>
+        <textarea type="text" id="form1" class="md-textarea" style="height: 100px"></textarea>
+        <label for="form1">Description:</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-pencil prefix grey-text"></i>
-        <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
-        <label for="form8">Your Code Snippet</label>
+        <textarea type="text" id="form2" class="md-textarea" style="height: 100px"></textarea>
+        <label for="form2">Your Code Snippet</label>
     </div>
 
     <div class="text-center">
-        <button class="btn btn-unique">Post <i class="fa fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-unique" onclick="createSnippet()">Post <i class="fa fa-paper-plane-o ml-1"></i></button>
     </div>
 
 </form>`
@@ -132,7 +132,15 @@ function doSomething() {
     //logs pending promise
 }
 
-
+function createSnippet () {
+//  event.preventDefault()
+  const text = document.querySelector('#form1').value
+  const code = document.querySelector('#form2').value
+  console.log(code)
+    console.log(text)
+  Snippet.create({ text: text, code: code })
+  
+}
 
 
 

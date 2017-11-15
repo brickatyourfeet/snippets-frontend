@@ -5,6 +5,48 @@ var signInForm = `<form> Email:<br>
     <input type="submit" value="Submit" onClick="submitSignIn()">
 </form>`
 
+var newSignInForm = `<form>
+    <p class="h5 text-center mb-4">Sign in</p>
+
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="text" id="defaultForm-email" class="form-control">
+        <label for="defaultForm-email">Your email</label>
+    </div>
+
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" id="defaultForm-pass" class="form-control">
+        <label for="defaultForm-pass">Your password</label>
+    </div>
+
+    <div class="text-center">
+        <button type = "submit" class="btn btn-default" onClick="submitSignIn()">Login</button>
+    </div>
+</form>`
+
+var postForm =`<form>
+
+    <p class="h5 text-center mb-4">Post your code</p>
+
+    <div class="md-form">
+        <i class="fa fa-tag prefix grey-text"></i>
+        <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
+        <label for="form8">Description:</label>
+    </div>
+
+    <div class="md-form">
+        <i class="fa fa-pencil prefix grey-text"></i>
+        <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
+        <label for="form8">Your Code Snippet</label>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-unique">Post <i class="fa fa-paper-plane-o ml-1"></i></button>
+    </div>
+
+</form>`
+
 //var nav = `<div class='topnav'>
 //  <a href='#sign_in' onClick='toSignIn()'>Sign in</a>
 //  <a href='#threads' onclick='doSomething()'>Show Threads</a>
@@ -29,6 +71,10 @@ function app() {
 
 function toSignIn() {
   document.getElementsByClassName('the_bod')[0].innerHTML=signInForm
+}
+
+function toPost(){
+    document.getElementsByClassName('the_bod')[0].innerHTML=postForm
 }
 
 function submitSignIn() {

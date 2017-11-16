@@ -117,7 +117,9 @@ function doSomething() {
                             <h4 class="card-title">` + snippets[item].text + `</h4>
                             <!--Text-->
                             <p class="card-text">` + snippets[item]._id +`</p>
-                            <a href="#" class="btn btn-primary">Button</a>
+                            <a href="#" class="btn btn-primary">Comment</a>
+                            <input type="text" id="comment" class="form-control">
+        <label for="comment">Comment</label>` + snippets[item].comments + `
                         </div>
 
                     </div>`
@@ -148,10 +150,11 @@ function createSnippet () {
 function submitSnippet(snippetId) {
   //console.log(document.getElementById(snippetId).value);
   var update = {
-    "text": document.getElementById(snippetId).value
+    "comments": [{"commentBody": document.getElementById(comment).value }]
   }
 
    Snippet.update(snippetId, update).then(response => {
+        console.log(response)
       doSomething()
    })
   console.log(snippetId) //////attach this to comment

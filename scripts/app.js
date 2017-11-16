@@ -52,7 +52,7 @@ var postForm =`<form>
 //  <a href='#threads' onclick='doSomething()'>Show Threads</a>
 //</div>`
 
-var body = `<div class='the_bod'>Welcome to Snippets.</div>`
+var body = `<br><br><div class='the_bod'>Welcome to Snippets.</div>`
 
 
 var footer = `<div id='footer'>
@@ -109,7 +109,7 @@ function doSomething() {
                     <div class="card">
 
                         <!--CODE SNIPPET-->
-                        <code>`+ snippets[item].code + ` </code>
+                        <code>` + snippets[item].code + ` </code>
 
                         <!--Card content-->
                         <div class="card-body">

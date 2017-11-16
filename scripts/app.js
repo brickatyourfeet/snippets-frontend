@@ -61,6 +61,7 @@ var footer = `<div id='footer'>
   </div>
 </div>`
 
+
 function app() {
   //document.getElementById('nav').innerHTML = nav
   document.getElementById('body').innerHTML = body
@@ -95,13 +96,12 @@ function doSomething() {
 
     var toAddToList = ""
     for(var item in snippets) {
+        //var temp = snippets[item].code
       toAddToList += 
           
-          `
-            <hr>
+          `<hr>
 
-    
-            <div class="row mt-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="row mt-5">
                 <!--First column-->
                 <div class="col">
 
@@ -139,6 +139,7 @@ function createSnippet () {
   console.log(code)
     console.log(text)
   Snippet.create({ text: text, code: code })
+  .then(doSomething())
   
 }
 

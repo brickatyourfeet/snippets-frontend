@@ -6,22 +6,22 @@ var signInForm = `<form> Email:<br>
 </form>`
 
 var newSignInForm = `<form>
-    <p class="h5 text-center mb-4">Sign in</p>
+    <p class="h5 text-center mb-4">Sign up</p>
 
     <div class="md-form">
         <i class="fa fa-envelope prefix grey-text"></i>
-        <input type="text" id="defaultForm-email" class="form-control">
-        <label for="defaultForm-email">Your email</label>
+        <input type="text" id="email" class="form-control">
+        <label for="email">Your email</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-lock prefix grey-text"></i>
-        <input type="password" id="defaultForm-pass" class="form-control">
-        <label for="defaultForm-pass">Your password</label>
+        <input type="password" id="password" class="form-control">
+        <label for="password">Your password</label>
     </div>
 
     <div class="text-center">
-        <button type = "submit" class="btn btn-default" onClick="submitSignIn()">Login</button>
+        <button type = "submit" class="btn btn-default" onClick="submitSignIn()">Sign Up</button>
     </div>
 </form>`
 
@@ -71,7 +71,7 @@ function app() {
 }
 
 function toSignIn() {
-  document.getElementsByClassName('the_bod')[0].innerHTML=signInForm
+  document.getElementsByClassName('the_bod')[0].innerHTML=newSignInForm
 }
 
 function toPost(){
@@ -95,8 +95,10 @@ function doSomething() {
     console.log(snippets)
 
     var toAddToList = ""
+    
     for(var item in snippets) {
         //var temp = snippets[item].code
+        var temp2 = snippets[item]._id
       toAddToList += 
           
           `<hr>
@@ -117,15 +119,15 @@ function doSomething() {
                             <h4 class="card-title">` + snippets[item].text + `</h4>
                             <!--Text-->
                             <p class="card-text">` + snippets[item]._id +`</p>
-                            <a href="#" class="btn btn-primary">Comment</a>
+                            <a href="#" class="btn btn-primary" onclick="submitSnippet(temp2)">Submit Comment</a>
                             <input type="text" id="comment" class="form-control">
         <label for="comment">Comment</label>` + snippets[item].comments + `
                         </div>
 
                     </div>`
-          
-          
-
+          console.log(snippets[item].comments)
+        //add onclick update
+        
     }
     document.getElementsByClassName('the_bod')[0].innerHTML= "" + toAddToList
      
